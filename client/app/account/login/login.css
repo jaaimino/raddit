@@ -1,0 +1,31 @@
+#login-panel{
+  margin-top: 50px;
+}
+
+.btn-facebook {
+  color: #fff;
+  background-color: #3B5998;
+  border-color: #133783;
+  margin: 2px;
+}
+
+.btn-twitter {
+  color: #fff;
+  background-color: #2daddc;
+  border-color: #0271bf;
+  margin: 2px;
+}
+
+.btn-google-plus {
+  color: #fff;
+  background-color: #dd4b39;
+  border-color: #c53727;
+  margin: 2px;
+}
+
+.btn-github {
+  color: #fff;
+  background-color: #fafafa;
+  border-color: #ccc;
+  margin: 2px;
+}

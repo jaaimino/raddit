@@ -1,0 +1,30 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-offset-2 col-md-8">
+      <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li class="active">Admin</li>
+      </ol>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-offset-2 col-md-8">
+      <h1 class="page-header">Moderator Control Panel</h1>
+      <ul class="list-group">
+        <li class="list-group-item" ng-repeat="user in users">
+          <h3>{{user.name}}</h3>
+          <p>{{user.email}}</p>
+          <h3>Role</h3>
+          <p>
+            {{user.role}}
+          </p>
+          <button tooltip="Demote" class="btn btn-danger" ng-click="demote(user)">
+            <span class="glyphicon glyphicon-thumbs-down"></span>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li class="active">{{topic.title}}</li>
+      </ol>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <h1 class="page-header">{{topic.title}}</h1>
+      <div class="col-md-6 col-lg-4" ng-repeat="post in posts">
+        <div class="thumbnail">
+          <!--<img alt="Hello">-->
+          <div class="caption">
+            <h3 class="text-center"><a ng-href="/topic/{{topic._id}}/post/{{post._id}}">{{post.title}}</a></h3>
+            <h4 class="text-center">{{post.author.name}}</h4>
+            <p class="text-center">{{post.content}}</h4>
+            <p class="text-center">
+              <a ng-href="/topic/{{topic._id}}/post/{{post._id}}" class="btn btn-primary" role="button">View</a>
+              <button ng-show="isRoleLeast('author')" ng-href="" ng-click="deleteThing(post)" class="btn btn-danger" role="button">Delete</button>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" ng-show="isRoleLeast('author')">
+    <div class="col-md-offset-3 col-md-6">
+      <form class="">
+        <div class="form-group">
+          <label for="posttitle">Post Title</label>
+          <input type="text" name="posttitle" class="form-control" placeholder="Enter a new message here." ng-model="newPost.title">
+        </div>
+        <div class="form-group">
+          <label for="postcontent">Post Content</label>
+          <textarea type="text" name="postcontent" class="form-control" placeholder="Enter a new message here." ng-model="newPost.content"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-med" ng-click="addThing()">Post</button>
+        <button class="btn btn-warning btn-med" ng-click="cancel()">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+  <hr>
+      <p>Stuff</p>
+  </div>
+</footer>
